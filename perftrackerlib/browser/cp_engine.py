@@ -111,6 +111,7 @@ class CPLoginForm:
             for k in tags:
                 if type(k) is tuple:
                     ret.append((k[0].capitalize(), k[1].capitalize()))
+                    ret.append((k[0], k[1].capitalize()))
                 else:
                     ret.append(k.capitalize())
             return ret
