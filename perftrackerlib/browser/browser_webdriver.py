@@ -414,6 +414,17 @@ class BrowserWebdriver(BrowserBase):
                 return True
             except BrowserExc as e:
                 pass
+        for tag, name in tag_names:
+            try:
+                el = self.dom_find_element_by_xpath('//*[@label="{}"]'.format(name))
+                if el.tag_name != tag:
+                    continue
+                if not self.dom_send_keys(el, keys):
+                    self.log_error("Couldn't enter %s" % title)
+                    return False
+                return True
+            except BrowserExc as e:
+                pass
 
         for tag, id in tag_ids:
             try:
