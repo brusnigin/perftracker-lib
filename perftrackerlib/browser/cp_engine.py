@@ -117,7 +117,7 @@ class CPLoginForm:
             return ret
 
         if user_tags is None:
-            user_tags = _capitalize_list([("input", "user"), ("input", "username"), ("input", "login")])
+            user_tags = _capitalize_list([("input", "user"), ("input", "username"), ("input", "login"), ("input", "user name")])
         if user_ids is None:
             user_ids = _capitalize_list([("input", "user_login")])
         if pass_tags is None:
