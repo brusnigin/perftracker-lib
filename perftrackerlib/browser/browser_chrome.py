@@ -208,7 +208,6 @@ class BrowserChrome(BrowserWebdriver):
         options.add_argument("--disable-setuid-sandbox")
 
         descaps = options.to_capabilities()
-        descaps.setCapability("acceptInsecureCerts", True)
         descaps['loggingPrefs'] = {'performance': 'DEBUG', 'browser': 'ALL', 'driver': 'ALL'}
 
         # w/a for hanging Chrome, see https://github.com/SeleniumHQ/docker-selenium/issues/87
